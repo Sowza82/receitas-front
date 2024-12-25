@@ -1,0 +1,299 @@
+/* Importando a fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --cor-principal: #ff6347; /* Vermelho Tomate */
+    --cor-secundaria: rgba(255, 255, 255, 0.8); /* Fundo claro para o formulário */
+    --cor-texto: #333333; /* Cor de texto principal */
+    --cor-texto-claro: #ffffff; /* Cor de texto claro (para botões) */
+    --cor-input-bg: #f4f4f4; /* Fundo dos inputs */
+    --cor-input-border: #ddd; /* Borda dos inputs */
+    --sombras-leves: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Fallback para Arial */
+}
+
+body {
+    background: url('../imgs/logcad.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--cor-texto);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, conteúdo e footer */
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--cor-principal);
+}
+
+.logo {
+    max-height: 80px;
+}
+
+h1 {
+    color: var(--cor-texto-claro);
+    font-size: 24px;
+    margin: 0 20px;
+    font-weight: 500;
+}
+
+nav {
+    display: flex; /* Mostra o nav como flex */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Exibe os itens em linha */
+    margin: 0; /* Remove margens padrão */
+}
+
+nav.active ul {
+    display: flex; /* Mostra o menu quando ativo */
+    flex-direction: column;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #f1f1f1; /* Cor ajustada para maior contraste no hover/focus */
+}
+
+/* Estilos do ícone do hambúrguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger span {
+    background-color: var(--cor-texto-claro);
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transição suave */
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--cor-principal);
+    position: absolute;
+    top: 60px; /* Ajustado para ficar abaixo do header */
+    left: 0;
+    text-align: center;
+}
+
+.menu.active {
+    display: flex; /* Exibe o menu quando ativo */
+}
+
+/* Estilos do conteúdo */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--sombras-leves);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--cor-principal);
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+div {
+    width: 100%; /* Faz com que os divs ocupem toda a largura do formulário */
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+label {
+    display: block; /* Faz com que os rótulos ocupem toda a largura */
+    margin-bottom: 5px; /* Espaçamento entre o rótulo e o input */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    width: 100%; /* Largura total do contêiner */
+    padding: 10px; /* Espaçamento interno */
+    background-color: var(--cor-input-bg);
+    border: 1px solid var(--cor-input-border);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+}
+
+/* Estilos para o feedback de força da senha */
+#password-strength {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#password-strength.fraca {
+    color: red;
+}
+
+#password-strength.media {
+    color: orange;
+}
+
+#password-strength.forte {
+    color: green;
+}
+
+/* Estilo para mensagens de sucesso */
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Estilo para mensagens de erro */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Destaque para campos com erro */
+.input-error {
+    border: 2px solid red;
+    padding-bottom: 10px; /* Adiciona espaço interno ao input com erro */
+}
+
+button {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 20px; /* Adiciona espaço acima do botão */
+    box-shadow: var(--sombras-leves); /* Sombra no botão */
+}
+
+/* Exemplo de transformação no botão */
+button:hover {
+    background-color: #e5533c;
+    transform: scale(1.05); /* Aumenta um pouco o botão ao passar o mouse */
+}
+
+
+button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    transition: outline 0.2s ease-in-out; /* Transição suave no foco */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        display: none; /* Esconder menu normal em telas menores */
+        flex-direction: column; /* Para quando estiver visível */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    nav ul.active {
+        display: flex; /* Exibir menu quando ativo */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaciamento vertical em telas menores */
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .hamburger {
+        display: flex; /* Mostrar ícone do hambúrguer */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Estilos para o menu hambúrguer */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}

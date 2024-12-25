@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="./imgs/Logo.png" alt="Logo Receitas Front">
+        <h1>Receitas Front</h1>
+        
+        <button class="hamburger" id="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <form id="loginForm" aria-labelledby="login-header">
+                <h2 id="login-header">Login</h2>
+                <label for="username">Nome</label>
+                <input type="text" id="username" name="username" placeholder="Nome de usuário" required aria-label="Nome de usuário"><br>
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Senha" required aria-label="Senha"><br>
+                <button type="submit" aria-label="Entrar">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <a href="register.html">Cadastre-se aqui</a>.</p>
+            
+        </div>
+        
+
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Tatiane Souza</p>
+    </footer>
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
