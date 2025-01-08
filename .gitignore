@@ -1,11 +1,14 @@
 # Ignorar o arquivo de variáveis de ambiente
 /backend/.env
 
-# Ignorar a pasta de dependências do Node.js na pasta backend
+# Ignorar a pasta de dependências do Node.js
 /backend/node_modules/
 
-# Ignorar arquivos de log na pasta backend
+# Ignorar arquivos de log
 /backend/*.log
+
+# Ignorar arquivos de uploads
+/backend/uploads/
 
 # Ignorar arquivos do sistema operacional
 .DS_Store
@@ -14,6 +17,3 @@ Thumbs.db
 # Ignorar arquivos temporários e caches
 *.tmp
 *.caches
-
-# Ignorar arquivos de uploads
-/backend/uploads/
