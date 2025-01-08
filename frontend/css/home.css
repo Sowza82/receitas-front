@@ -2,29 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-    --cor-principal: #ff6347; /* Vermelho Tomate */
-    --cor-secundaria: rgba(255, 255, 255, 0.8); /* Fundo claro para o formulário */
-    --cor-texto: #333333; /* Cor de texto principal */
-    --cor-texto-claro: #ffffff; /* Cor de texto claro (para botões) */
-    --cor-input-bg: #f4f4f4; /* Fundo dos inputs */
-    --cor-input-border: #ddd; /* Borda dos inputs */
-    --sombras-leves: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    --cor-principal: #ff6347; 
+    --cor-secundaria: rgba(255, 255, 255, 0.8); 
+    --cor-fundo: #f3eceb; 
+    --cor-texto: #333333; 
+    --cor-texto-claro: #ffffff; 
+    --cor-input-bg: #f4f4f4; 
+    --cor-input-border: #ddd; 
+    --sombras-leves: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    --cor-destaque: #ff9800; 
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif; /* Aplica a fonte globalmente */
+    font-family: 'Roboto', sans-serif; 
 }
 
 body {
-    background: url('../imgs/logcad.jpg') no-repeat center center fixed;
+    background-color: var(--cor-fundo);
     background-size: cover;
     color: var(--cor-texto);
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Header, conteúdo e footer */
+    grid-template-rows: auto 1fr auto; 
 }
 
 header {
@@ -33,6 +35,8 @@ header {
     align-items: center;
     padding: 10px 20px;
     background-color: var(--cor-principal);
+    position: relative; /* Necessário para alinhar o menu corretamente */
+    z-index: 1000;
 }
 
 .logo {
@@ -47,18 +51,19 @@ h1 {
 }
 
 nav {
-    display: flex; /* Mostra o nav como flex */
+    display: flex; 
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: flex; /* Exibe os itens em linha */
-    margin: 0; /* Remove margens padrão */
+    display: flex; 
+    margin: 0; 
 }
 
 nav.active ul {
-    display: flex; /* Mostra o menu quando ativo */
+    display: flex; 
     flex-direction: column;
 }
 
@@ -75,7 +80,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--cor-secundaria);
 }
 
 /* Estilos do ícone do hambúrguer */
@@ -84,6 +89,7 @@ nav ul li a:focus {
     flex-direction: column;
     cursor: pointer;
     margin-left: 20px;
+    z-index: 1100; /* Para evitar sobreposição */
 }
 
 .hamburger span {
@@ -100,21 +106,14 @@ nav ul li a:focus {
     width: 100%;
     background-color: var(--cor-principal);
     position: absolute;
-    top: 60px; /* Ajustado para ficar abaixo do header */
+    top: 60px; 
     left: 0;
     text-align: center;
+    z-index: 1000;
 }
 
 .menu.active {
-    display: flex; /* Exibe o menu quando ativo */
-}
-
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
+    display: flex; 
 }
 
 /* Media Queries para Responsividade */
@@ -124,25 +123,33 @@ footer {
     }
 
     nav ul {
-        display: none; /* Esconder menu normal em telas menores */
-        flex-direction: column; /* Para quando estiver visível */
-        align-items: center; /* Centraliza os itens */
+        display: none; 
+        flex-direction: column; 
+        align-items: center; 
     }
 
     nav ul.active {
-        display: flex; /* Exibir menu quando ativo */
+        display: flex;
     }
 
     nav ul li {
-        margin: 10px 0; /* Espaciamento vertical em telas menores */
+        margin: 10px 0; 
     }
 
-      h2 {
+    h2 {
         font-size: 22px;
     }
 
     .hamburger {
-        display: flex; /* Mostrar ícone do hambúrguer */
+        display: flex; 
+    }
+
+    /* Ajustes para o banner em telas menores */
+    .banner-content h2 {
+        font-size: 24px;
+    }
+    .banner-content button {
+        padding: 10px 20px;
     }
 }
 
@@ -172,4 +179,430 @@ footer {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilo do menu com ícones */
+nav ul li a i {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 18px;
+}
+
+nav ul li a i {
+    color: var(--cor-texto-claro);
+}
+
+nav ul li a:hover i {
+    color: var(--cor-secundaria);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px; 
+    overflow: hidden; 
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%; 
+}
+
+.banner-content h2 {
+    font-size: 28px; 
+    margin-bottom: 15px;
+}
+
+.banner-content button {
+    background-color:var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner-content button:hover {
+    background-color: var(--cor-destaque);
+    transform: scale(1.1);  
+}
+
+
+/* Seções gerais */
+
+section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para a seção #receitas */
+#receitas {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#receitas h2 {
+    font-size: 2rem;
+    color: var(--cor-texto);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#receitas .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#receitas .card {
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    box-shadow: var(--sombras-leves);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 22%; 
+    margin: 10px;
+}
+
+#receitas .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#receitas .card h3 {
+    font-size: 1.25rem;
+    color: var(--cor-texto);
+    margin: 15px;
+}
+
+#receitas .card p {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    margin: 0 15px 15px;
+}
+
+/* Estilos para a seção #servicos */
+#servicos {
+    background-color: var(--cor-principal);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 2.2rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#servicos .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#servicos .card {
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    box-shadow: var(--sombras-leves);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22%; 
+    margin: 10px;
+}
+
+#servicos .card .icon {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+}
+
+#servicos .card h3 {
+    font-size: 1.8rem;
+    color: var(--cor-texto);
+    margin: 15px 0;
+}
+
+#servicos .card p {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Animação de hover para os cards */
+#receitas .card:hover, #servicos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 1200px) {
+    #receitas .card, #servicos .card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 900px) {
+    #receitas .card, #servicos .card {
+        width: 45%; 
+    }
+}
+
+@media (max-width: 600px) {
+    #receitas .card, #servicos .card {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    #receitas, #servicos {
+        padding: 20px;
+    }
+
+    #receitas .cards,
+    #servicos .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #receitas .card img,
+    #servicos .card .icon {
+        height: auto;
+    }
+
+    #servicos .card .icon {
+        font-size: 2rem;
+    }
+}
+
+
+/* Estilo para a seção */
+.dicas {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o aside */
+
+.tips {
+    background-color:#ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombras-leves); 
+    margin: 20px 0;
+    text-align: center; 
+}
+
+/* Estilo para o ícone de chef antes do título */
+.chef-icon {
+    font-size: 2rem;
+    color: var(--cor-destaque); 
+    margin-bottom: 10px;
+}
+
+/* Título da seção */
+.tips-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-texto);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Texto explicativo */
+.tips-text {
+    font-size: 1rem;
+    color: #555; 
+    margin-bottom: 15px;
+}
+
+/* Links de culinária */
+.tips-links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.tips-links li {
+    margin-bottom: 8px;
+}
+
+.tips-links a {
+    text-decoration: none;
+    color: var(--cor-destaque);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.tips-links a:hover {
+    color: var(--cor-principal); 
+}
+
+/* Estilo para os ícones na parte inferior */
+.icon-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.icon-container i {
+    font-size: 2rem; 
+    color: var(--cor-destaque); 
+    transition: color 0.3s ease;
+}
+
+.icon-container i:hover {
+    color: var(--cor-principal); 
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .tips-title {
+        font-size: 1.3rem;
+    }
+
+    .tips-text {
+        font-size: 0.9rem;
+    }
+
+    .tips-links a {
+        font-size: 0.9rem;
+    }
+
+    .icon-container i {
+        font-size: 1.5rem; 
+    }
+}
+/* Estilos para o article */
+.cooking-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cooking-title {
+    font-size: 2rem;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+.cooking-intro {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+.cooking-list {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cooking-list li {
+    margin-bottom: 1rem;
+}
+
+/* Adicionando borda no último parágrafo */
+.cooking-conclusion {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+/* Estilo para dispositivos menores */
+@media (max-width: 768px) {
+    .section {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+
+    .tips {
+        padding: 1rem;
+    }
+
+    .cooking-title {
+        font-size: 1.8rem;
+    }
+
+    .cooking-intro,
+    .cooking-conclusion {
+        font-size: 1rem;
+    }
+    
+    .cooking-list {
+        font-size: 0.9rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    font-size: 1rem;
+}
+
+
+/* Estilo para o botão "Voltar ao topo" */
+#btnTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#btnTopo:hover {
+    background-color: var(--cor-destaque);
+}
+
+#btnTopo i {
+    font-size: 18px;
 }

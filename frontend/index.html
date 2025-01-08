@@ -3,29 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Receitas Front</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
+   
     <header>
-        <img class="logo" src="./imgs/Logo.png" alt="Logo Receitas Front">
+        <img class="logo" src="./imgs/Logo.png" alt="Logo Receitas Front" title="Receitas Front - Seu guia de receitas">
         <h1>Receitas Front</h1>
         
-        <button class="hamburger" id="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
-        <nav id="menu">
+        <!-- Botão de menu com ícone -->
+        <button class="hamburger" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fas fa-bars"></i> <!-- Ícone de hambúrguer -->
+        </button>
+    
+        <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li> <!-- Ícone Home -->
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li> <!-- Ícone Login -->
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> Cadastro</a></li> <!-- Ícone Cadastro -->
             </ul>
         </nav>
     </header>
+    
+
+   
+    <div class="banner">
+        <img src="./imgs/banner.png" alt="Banner de Receitas">
+        <div class="banner-content">
+            <h2>Descubra Receitas Incríveis!</h2>
+                <a href="register.html"><button>Saiba Mais</button></a>
+        </div>
+    </div>
+
+ <main>
+        <section id="receitas">
+            <h2>Receitas</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="./imgs/especial.webp" alt="Receita 1">
+                    <h3>Receita Especial</h3>
+                    <p>Uma receita deliciosa para o seu dia.</p>
+                </div>
+                <div class="card">
+                    <img src="./imgs/saudavel.webp" alt="Receita 2">
+                    <h3>Receita Saudável</h3>
+                    <p>Opção saudável e cheia de sabor e saúde pra sua vida.</p>
+                </div>
+                <div class="card">
+                    <img src="./imgs/sobremesa.jpg" alt="Receita 3">
+                    <h3>Sobremesa Fácil</h3>
+                    <p>Uma sobremesa rápida e deliciosa para qualquer ocasião.</p>
+                </div>
+                <div class="card">
+                    <img src="./imgs/vegan.jpg" alt="Receita 4">
+                    <h3>Prato Vegano</h3>
+                    <p>Delícia nutritiva sem ingredientes de origem animal.</p>
+                </div>
+                 
+            </div>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div class="cards">
+            <div class="card">
+                <div class="icon"><i class="fas fa-utensils"></i></div>
+                <h3>Delivery de Receitas</h3>
+                <p>Desfrute de pratos deliciosos preparados com ingredientes frescos e muito carinho, entregues diretamente na sua porta. Ideal para quem busca praticidade sem abrir mão de refeições saborosas e de qualidade. Descubra o prazer de uma alimentação saudável e cheia de sabor.</p>
+
+            </div>
+            
+                <div class="card">
+                    <div class="icon"><i class="fas fa-blender"></i></div>
+                    <h3>Workshops Culinários</h3>
+                    <p>Participe de workshops exclusivos para aprender técnicas culinárias com chefs renomados. Descubra dicas práticas, truques de cozinha e aprenda a preparar pratos incríveis para surpreender sua família e amigos. Transforme sua paixão pela gastronomia em verdadeiras obras de arte.</p>
+
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Consultoria Nutricional</h3>
+                    <p>Conte com o apoio de profissionais especializados para criar refeições balanceadas e alinhadas aos seus objetivos de saúde. Receba orientações personalizadas que transformam sua alimentação em um aliado para uma vida mais saudável e energética.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-mortar-pestle"></i></div>
+                    <h3>Receitas Personalizadas</h3>
+                    <p>Desenvolvemos receitas exclusivas que atendem às suas preferências e necessidades específicas. Seja para ocasiões especiais, restrições alimentares ou dietas personalizadas, oferecemos combinações únicas e saborosas que tornam cada refeição inesquecível.</p>
+                </div>
+                      
+            </div>
+        </section>
+</main>
+<section class="dicas">
+    <aside class="tips">
+        <!-- Ícone de chef antes do título -->
+        <div class="chef-icon">
+            <i class="fas fa-user-chef"></i>
+        </div>
+        
+        <!-- Título da seção -->
+        <h3 class="tips-title">Dicas de Culinária</h3>
+        
+        <!-- Texto explicativo -->
+        <p class="tips-text">Confira nossas dicas exclusivas para melhorar suas receitas.</p>
+        
+        <!-- Links de sites relacionados a culinária -->
+        <ul class="tips-links">
+            <li><a href="https://www.allrecipes.com/" target="_blank" title="Explore uma vasta coleção de receitas">All Recipes</a></li>
+            <li><a href="https://www.foodnetwork.com/" target="_blank" title="Encontre programas e receitas de chefs famosos">Food Network</a></li>
+            <li><a href="https://www.tudogostoso.com.br/" target="_blank" title="Receitas práticas e deliciosas">Tudo Gostoso</a></li>
+            <li><a href="https://www.bbcgoodfood.com/" target="_blank" title="Dicas e receitas de chefs renomados">BBC Good Food</a></li>
+            <li><a href="https://www.serchef.com.br/" target="_blank" title="Receitas e aulas de culinária">Ser Chef</a></li>
+        </ul>
+        
+        <!-- Ícones relacionados à culinária -->
+        <div class="icon-container">
+            <i class="fas fa-utensils"></i>
+            <i class="fas fa-blender"></i>
+            <i class="fas fa-pizza-slice"></i>
+            <i class="fas fa-carrot"></i>
+        </div>
+    </aside>
+    
+    
+    
+
+    <article class="cooking-tips">
+        <h2 class="cooking-title">5 Dicas para Aprender a Cozinhar como um Chef</h2>
+        <p class="cooking-intro">Cozinhar pode ser uma arte, mas com as dicas certas, você pode se tornar um verdadeiro chef na sua própria cozinha. Aqui estão cinco dicas para aprimorar suas habilidades culinárias:</p>
+        <ol class="cooking-list">
+            <li><strong>Organize sua cozinha:</strong> Antes de começar a cozinhar, tenha todos os ingredientes e utensílios à mão. Isso vai ajudar a evitar o estresse durante o preparo.</li>
+            <li><strong>Use ingredientes frescos:</strong> A qualidade dos ingredientes pode fazer toda a diferença no sabor do prato.</li>
+            <li><strong>Experimente temperos e especiarias:</strong> Temperos frescos e especiarias podem transformar um prato simples em algo especial.</li>
+            <li><strong>Pratique a paciência:</strong> Muitas receitas exigem tempo e atenção. Evite apressar os processos de cocção.</li>
+            <li><strong>Seja criativo:</strong> Não tenha medo de experimentar e criar suas próprias versões de pratos tradicionais.</li>
+        </ol>
+        <p class="cooking-conclusion">Seguindo essas dicas, você vai ver que a cozinha pode ser um lugar de muita diversão e aprendizado!</p>
+    </article>
+</section>
+
+
+
 
     <footer>
         <p>Desenvolvido por Tatiane Souza</p>
     </footer>
-
+    
+    <!-- Botão para voltar ao topo -->
+    <button onclick="scrollToTop()" id="btnTopo" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="./js/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Feito com Sucesso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+            color: #555;
+        }
+        #loading {
+            font-size: 1.5em;
+            color: #888;
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Login realizado com sucesso!</h1>
+    <p>Bem-vindo! Estamos te redirecionando para a página inicial...</p>
+
+    <div id="loading">
+        <div class="spinner"></div>
+        Redirecionando...
+    </div>
+
+    <script>
+        // Redireciona automaticamente para a página inicial após 3 segundos
+        setTimeout(() => {
+            window.location.href = 'index.html'; 
+        }, 3000);
+    </script>
+</body>
+</html>

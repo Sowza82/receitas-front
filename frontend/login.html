@@ -5,44 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="./imgs/Logo.png" alt="Logo Receitas Front">
+        <img class="logo" src="./imgs/Logo.png" alt="Logo Receitas Front" title="Receitas Front - Seu guia de receitas">
         <h1>Receitas Front</h1>
         
-        <button class="hamburger" id="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
-        <nav id="menu">
+        <!-- Botão de menu com ícone -->
+        <button class="hamburger" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fas fa-bars"></i> 
+        </button>
+    
+        <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li> 
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li> 
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> Cadastro</a></li> 
             </ul>
         </nav>
     </header>
+    
     
     <main>
         <div class="form-container">
             <form id="loginForm" aria-labelledby="login-header">
                 <h2 id="login-header">Login</h2>
+                
+                <!-- Campo de Nome de Usuário com Ícone -->
                 <label for="username">Nome</label>
-                <input type="text" id="username" name="username" placeholder="Nome de usuário" required aria-label="Nome de usuário"><br>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Nome de usuário" required aria-label="Nome de usuário">
+                </div><br>
+    
+                <!-- Campo de Senha com Ícone -->
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Senha" required aria-label="Senha"><br>
-                <button type="submit" aria-label="Entrar">Entrar</button>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Senha" required aria-label="Senha">
+                </div><br>
+    
+                <button type="submit" aria-label="Entrar">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </button>
             </form>
-            <p>Não tem uma conta? <a href="register.html">Cadastre-se aqui</a>.</p>
             
+            <p>Não tem uma conta? <a href="register.html">Cadastre-se aqui</a>.</p>
+    
+            <!-- Container para mensagens de erro -->
+            <div id="error-message"></div>
         </div>
-        
-
     </main>
+    
 
     <footer>
         <p>Desenvolvido por Tatiane Souza</p>
     </footer>
-
+    
+    <!-- Link para o script de login.js -->
     <script src="./js/login.js"></script>
 </body>
 </html>
