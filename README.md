@@ -12,41 +12,6 @@ Este projeto tem como objetivo a integração entre front-end e back-end, além 
 - **Login de Usuários**: Permite que os usuários façam login fornecendo suas credenciais, com verificação de senha segura.
 - **Integração Front-End e Back-End**: Comunicação entre a interface do usuário e o banco de dados via API RESTful.
 
-# Estrutura de Diretórios
-
-/receitas-front
-│
-├── /frontend           # Arquivos do frontend (HTML, CSS, JS) 
-│   ├── register.html   # Alterado de cadastro.html para register.html
-│   ├── login.html      
-│   ├── index.html      
-│   ├── loginSucess.html # Novo arquivo para sucesso de login
-│   ├── /css            
-│   │   ├── home.css    
-│   │   ├── login.css   
-│   │   ├── register.css  # Alterado de cadastro.css para register.css
-│   ├── /js             
-│   │   ├── home.js     
-│   │   ├── login.js    
-│   │   ├── register.js  # Alterado de cadastro.js para register.js
-│   └── /imgs           # Imagens do projeto
-│
-├── /backend            # Arquivos do backend (Node.js, Express, MySQL)
-│   ├── /config         # Configuração do banco de dados
-│   │   └── db.js       
-│   ├── /controllers    # Controladores para lógica de negócios
-│   │   ├── authController.js
-│   │   └── userController.js
-│   ├── /models         # Modelos de banco de dados
-│   │   └── userModel.js
-│   ├── /routes         # Definição das rotas da API
-│   │   ├── authRoutes.js
-│   │   └── userRoutes.js
-│   ├── /middleware     # Middlewares (autenticação, etc.)
-│   │   └── authMiddleware.js
-│   ├── package.json    # Configuração de dependências
-│   ├── .env            # Variáveis de ambiente (banco de dados, etc.)
-│   └── server.js       # Inicialização do servidor
 
  
 ## Tecnologias Utilizadas
@@ -77,28 +42,6 @@ npm init -y
 npm install express
 
 ## 3. Configure o banco de dados:
-
-- Crie o banco de dados no MySQL:
-
-// Ajuste as credenciais no arquivo backend/config/db.js:
-
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,       // Endereço do servidor de banco de dados
-  user: process.env.DB_USER,       // Nome de usuário do banco de dados
-  password: process.env.DB_PASSWORD, // Senha do banco de dados
-  database: process.env.DB_NAME,   // Nome do banco de dados
-  port: process.env.PORT,          // Porta do servidor
-});
-
-- Configure as variáveis de ambiente no arquivo .env:
-  | Variável       | Dados                             | Descrição                                                                 |
-|----------------|-----------------------------------|---------------------------------------------------------------------------|
-| DB_HOST        | localhost                         | Endereço do servidor de banco de dados, geralmente 'localhost' para uso local. |
-| DB_USER        | root                              | Nome de usuário do banco de dados (exemplo: 'root' para MySQL local).    |
-| DB_PASSWORD    | sua_senha_aqui                    | A senha do usuário do banco de dados. Substitua com a senha real.       |
-| DB_NAME        | front_receitas                    | Nome do banco de dados que você criou no MySQL.                          |
-| PORT           | 3000                              | A porta na qual o servidor backend irá rodar (padrão é 3000).           |
-| JWT_SECRET     | sua_chave_secreta_aqui            | A chave secreta para gerar e verificar os tokens JWT. Deve ser uma string longa e segura. |
 
 
 ## 4. **Inicie o servidor backend:**
@@ -162,7 +105,7 @@ Caso tenha dúvidas ou precise de ajuda, entre em contato:
 
 Aqui estão as imagens da tela de **Cadastro** e **Login** da nossa API **Receitas Front**:
 
-<div style="display: flex; justify-content: center; gap: 20px;">
+<div style="display: flex; justify-content: center; gap: 20 px;">
 
   <img src="frontend/imgs/cadastro.png" alt="Tela de Cadastro" width="45%" />
   
